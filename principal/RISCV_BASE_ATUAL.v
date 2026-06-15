@@ -2,7 +2,6 @@
 \m5
    
 \SV
-//m4_include_lib(['https://raw.githubusercontent.com/stevehoover/RISC-V_MYTH_Workshop/c1719d5b338896577b79ee76c2f443ca2a76e14f/tlv_lib/risc-v_shell_lib.tlv'])
 m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/main/principal/imem_rb_mem.v'])
    //m4_asm(ADD, rd, rs1, rs2)
    //m4_asm(SUB, rd, rs1, rs2)
