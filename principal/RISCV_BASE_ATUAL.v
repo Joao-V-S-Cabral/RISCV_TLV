@@ -2,7 +2,7 @@
 \m5
    
 \SV
-m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/main/principal/imem_rb_mem.v'])
+//m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/main/principal/imem_rb_mem.v'])
    //m4_asm(ADD, rd, rs1, rs2)
    //m4_asm(SUB, rd, rs1, rs2)
    //m4_asm(XOR, rd, rs1, rs2)
@@ -165,8 +165,7 @@ m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/mai
    m4_asm(SUB, r2, r0, r1)
    m4_asm(ADDI, r1, r0, 1100)
    m4_asm(SUB, r2, r0, r1)
-   m4_asm(ECALL)
-
+   m4_asm(EBREAK)
 
 
    // Optional:

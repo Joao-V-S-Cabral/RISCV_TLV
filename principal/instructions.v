@@ -172,7 +172,7 @@ m4+definitions(['
   m4_define(['m4_instrR2'], ['m4_instr_funct7($@, 7, ['$6'])m4_define(['m4_asm_$7'],
        ['m4_asm_instr_str(R, ['$7'], $']['@){m4_ifelse($2, ['A'], ['m4_localparam_value(['$7_INSTR_FUNCT5']), ']']m4_arg(2)['[''], m4_localparam_value(['$7_INSTR_FUNCT7'])), 5'b$6, m4_asm_reg(']m4_arg(2)['), ']m4_asm_funct3(['$7'], ['$4'])[', m4_asm_reg(']m4_arg(1)['), ']m4_localparam_value($7_INSTR_OPCODE)['}'])'])
   m4_define(['m4_instrI2'], ['m4_instr_funct7($@, 7, ['$6'])m4_define(['m4_asm_$7'],
-       ['m4_asm_instr_str(I, ['$7'], $']['@){m4_localparam_value(['$7_INSTR_FUNCT7']), 5'b$6, 5'b0, m4_asm_funct3(['$7'], ['$4']), 5'b0, ']m4_localparam_value($7_INSTR_OPCODE)['}'])'])
+       ['m4_asm_instr_str(I, ['$7'], $']['@){m4_localparam_value(['$7_INSTR_FUNCT7']), 5'b$6, 5'b0, 3'b$4, 5'b0, ']m4_localparam_value($7_INSTR_OPCODE)['}'])'])
   m4_define(['m4_instrR4'], ['m4_instr_funct2($@)m4_define(['m4_asm_$6'],
        ['m4_asm_instr_str(R, ['$6'], $']['@){m4_asm_reg(']m4_arg(4)['), m4_localparam_value(['$6_INSTR_FUNCT2']), m4_asm_reg(']m4_arg(3)['), m4_asm_reg(']m4_arg(2)['), ']m4_asm_funct3(['$6'], ['$4'])[', m4_asm_reg(']m4_arg(1)['), ']m4_localparam_value($6_INSTR_OPCODE)['}'])'])
   m4_define(['m4_instrS'], ['m4_instr_funct3($@, ['no_dest'])m4_define(['m4_asm_$5'],
