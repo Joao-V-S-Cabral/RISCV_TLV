@@ -166,7 +166,7 @@ m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/mai
     m4_asm(ADDI, r12, r0, 10)
     m4_asm(ADD, r10, r10, r13)
     m4_asm(ADDI, r13, r13, 1)
-    m4_asm(BNE, r13, r12, -8)
+    m4_asm(BNE, r13, r12, 1111111111000)
     m4_asm(EBREAK)
 
    // Optional:
