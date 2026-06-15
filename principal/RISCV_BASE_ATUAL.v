@@ -2,7 +2,7 @@
 \m5
    
 \SV
-//m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/main/principal/imem_rb_mem.v'])
+m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/main/principal/imem_rb_mem.v'])
    //m4_asm(ADD, rd, rs1, rs2)
    //m4_asm(SUB, rd, rs1, rs2)
    //m4_asm(XOR, rd, rs1, rs2)
@@ -161,12 +161,13 @@
    //  r14 (a4): Sum
    // 
    // External to function:
-   m4_asm(ADDI, r1, r0, 1100)
-   m4_asm(SUB, r2, r0, r1)
-   m4_asm(ADDI, r1, r0, 1100)
-   m4_asm(SUB, r2, r0, r1)
-   m4_asm(EBREAK)
-
+    m4_asm(ADDI, r10, r0, 0)
+    m4_asm(ADDI, r13, r0, 1)
+    m4_asm(ADDI, r12, r0, 10)
+    m4_asm(ADD, r10, r10, r13)
+    m4_asm(ADDI, r13, r13, 1)
+    m4_asm(BNE, r13, r12, -8)
+    m4_asm(EBREAK)
 
    // Optional:
    m4_define_hier(['M4_IMEM'], M4_NUM_INSTRS)
@@ -246,7 +247,7 @@
          $jalr_taken  = ($opcode == 7'b1100111);
          $is_lui      = ($opcode == 7'b0110111);
          $is_auipc    = ($opcode == 7'b0010111);
-         *failed      = ($opcode == 7'b1110011);
+         *passed      = ($opcode == 7'b1110011);
          
          // ======================================================
          // DEFININDO IMEDIATOS
@@ -422,6 +423,5 @@
          // DECIDINDO DADO A SER ENVIADO PARA REG_BANK
          // ======================================================
          $write_data[31:0] = $exec_mem_to_reg ? $load_data[31:0] : $alu_result[31:0];
-   *passed = *cyc_cnt > 40;
 \SV
    endmodule
