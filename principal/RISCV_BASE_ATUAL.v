@@ -165,6 +165,7 @@ m4_include_lib(['https://raw.githubusercontent.com/Joao-V-S-Cabral/RISCV_TLV/mai
    m4_asm(SUB, r2, r0, r1)
    m4_asm(ADDI, r1, r0, 1100)
    m4_asm(SUB, r2, r0, r1)
+   m4_asm(ECALL)
 
 
 

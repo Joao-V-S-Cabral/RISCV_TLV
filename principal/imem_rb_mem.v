@@ -8,6 +8,9 @@ m4+definitions(['
    
    m4_define(['M4_NUM_INSTRS'], 0)
    
+   m4_define(['m4_asm_ECALL'], ['m4_asm_instr_str(I, ECALL, $1, $2, $3, $4, $5, $6, $7){12'b0, 5'b0, 3'b0, 5'b0, 7'b1110011}'])
+   m4_define(['m4_asm_EBREAK'], ['m4_asm_instr_str(I, EBREAK, $1, $2, $3, $4, $5, $6, $7){12'b1, 5'b0, 3'b0, 5'b0, 7'b1110011}'])
+   
    m4_echo(m4tlv_riscv_gen__body())
 '])
 
